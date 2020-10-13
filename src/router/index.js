@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Arabicmovies from '@/views/Arabicmovies.vue'
+import Englishmovies from '@/views/Englishmovies.vue'
+import ArabicSeries from '@/views/Arabicseries.vue'
+import EnglishSeries from '@/views/Englishseries.vue'
+import Watch from '@/views/Watch.vue'
+import Episod from '@/views/SeriesEpisod.vue'
 
 Vue.use(VueRouter)
 
@@ -11,16 +17,39 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/arabicmovies',
+    name: 'arabicmovies',
+    component: Arabicmovies
+  },
+  {
+    path: '/englishmovies',
+    name: 'englishmovies',
+    component: Englishmovies
+  },
+  {
+    path: '/arabicseries',
+    name: 'arabicseries',
+    component: ArabicSeries
+  },
+  {
+    path: '/englishseries',
+    name: 'englishseries',
+    component: EnglishSeries
+  },
+  {
+    path: '/watch',
+    name: 'watch',
+    component: Watch
+  },
+  {
+    path: '/episods',
+    name: 'episods',
+    component: Episod
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
